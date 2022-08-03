@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "learnReactNative",
-    "slug": "learnReactNative",
+    "name": "react-native-navigation",
+    "slug": "react-native-navigation",
+    "owner":"kadyrov.a",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

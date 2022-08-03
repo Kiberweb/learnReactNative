@@ -1,13 +1,13 @@
-import { StyleSheet, SafeAreaView } from "react-native";
-import SignInScreen from "./client/views/SignInScreen";
-import SignUpScreen from "./client/views/SignUpScreen";
+import * as React from "react";
+import { StyleSheet, View } from "react-native";
+
+import ScreenNavigator from "./navigation";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.root}>
-      {/* <SignInScreen /> */}
-      <SignUpScreen />
-    </SafeAreaView>
+    <View style={styles.root}>
+      <ScreenNavigator />
+    </View>
   );
 }
 

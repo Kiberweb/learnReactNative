@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 
-import UserImg from "../../../assets/user.png";
-
 export default function SignUpScreen() {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
+  const [secondName, setSecondName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+
+  const users = [];
+  const user = {
+    id: "",
+    email,
+    username,
+    password,
+  };
 
   const onSignInPressed = () => {
     console.warn("onSignInPressed");
@@ -23,10 +30,11 @@ export default function SignUpScreen() {
         setValue={setEmail}
         type="email-address"
       />
+      <CustomInput placeholder="Name" value={name} setValue={setName} />
       <CustomInput
-        placeholder="Username"
-        value={username}
-        setValue={setUsername}
+        placeholder="Name"
+        value={secondName}
+        setValue={setSecondName}
       />
       <CustomInput
         placeholder="Password"
@@ -44,6 +52,11 @@ export default function SignUpScreen() {
 
       <View style={styles.btnWrapper}>
         <CustomButton text="Sing Up" handlePress={onSignInPressed} />
+        <CustomButton
+          text={`Log In`}
+          handlePress={() => navigation.navigate("SignIn")}
+          type="TERTIARY"
+        />
       </View>
     </View>
   );
